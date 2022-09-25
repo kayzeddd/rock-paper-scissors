@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+        let computerSelection = getComputerChoice();
+        let playerPrompt =  prompt("ROCK? | PAPER? | SCISSORS?");
+        let playerSelection = playerPrompt.toUpperCase();
+
+        if (playerSelection != "ROCK" || playerSelection != "SCISSORS" || playerSelection != "PAPER" ) {
+            alert("You did not enter ROCK or PAPER or SCISSORS");
+            let computerSelection = getComputerChoice();
+            let playerPrompt =  prompt("ROCK? | PAPER? | SCISSORS?");
+            let playerSelection = playerPrompt.toUpperCase();
+            play(computerSelection, playerSelection);
+        }
+        
+        function getComputerChoice(){
+            let random = Math.floor(Math.random() * 3);
+            if (random === 0) {
+                return "ROCK";
+                }
+                else if (random === 1) {
+                    return "PAPER"
+                }
+                else if (random ===2) {
+                    return "SCISSORS"
+                }
+            }
+        
+        function play(computerSelection, playerSelection){
+            if (computerSelection === playerSelection) {
+                return alert("TIE!")
+            }
+            else if (computerSelection === "ROCK") {
+                return (playerSelection === "PAPER") ? alert("PLAYER WINS!") : alert("COMPUTER WINS!") 
+            }
+            else if (computerSelection === "PAPER") {
+                return (playerSelection === "SCISSORS") ? alert("PLAYER WINS!") : alert("COMPUTER WINS!")
+            }
+            else if (computerSelection === "SCISSORS") {
+                return (playerSelection === "ROCK") ? alert("PLAYER WINS!") : alert("COMPUTER WINS!")
+            }
+        }
+        
+        
+
+
+    </script>
+</body>
+</html>
