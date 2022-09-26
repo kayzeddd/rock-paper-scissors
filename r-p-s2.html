@@ -8,7 +8,23 @@
 </head>
 <body>
     <script>
-        numberOfGames(5)
+        promptRounds()
+
+        function promptRounds() {
+            let rounds = prompt("How many rounds of ROCK-PAPER-SCISSORS?");
+            if(rounds == null){
+                return
+            }
+            if (!(Number(rounds) == rounds)) {
+                alert("Enter a number!");
+                return promptRounds()
+            }
+            if (rounds < 1){
+                console.log("Number of games needs to be more than 0!");
+                return promptRounds();
+            }
+            numberOfGames(+rounds)
+        }
 
         function getComputerChoice(){
             let random = Math.floor(Math.random() * 3);
@@ -72,16 +88,28 @@
             }
 
             if (playerScore > computerScore) {
-                return console.log("PLAYER WINS!")
+                alert("PLAYER WINS!");
+                return(playAgain())
                 }
             else if (playerScore < computerScore) {
-                return console.log("COMPUTER WINS!")
+                alert("COMPUTER WINS!");
+                return (playAgain())
             }
             else if (playerScore == computerScore) {
-                return console.log("NO ONE WINS!")
+                alert("NO ONE WINS!");
+                return playAgain()
             }
         }
-            
+        
+        function playAgain() {
+            let ask = confirm("Play Again?");
+            if (ask == true){
+                promptRounds()
+            }
+            else {
+                return
+            }
+        }
         
 
 
