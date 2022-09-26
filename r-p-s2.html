@@ -25,7 +25,7 @@
         
         function play(computer, player){
             if (computer === player) {
-                return 
+                return "tie"
             }
             else if (computer === "ROCK") {
                 return (player === "PAPER") ? "playerwin" : "computerwin" 
@@ -39,6 +39,10 @@
         }
         
         function numberOfGames(n){
+
+            var playerScore = 0;
+            var computerScore = 0;
+
             for (let i = 1; i <=n ; i++) {
             let computerSelection = getComputerChoice();
             let playerPrompt =  prompt(`ROUND ${i}: ROCK? | PAPER? | SCISSORS?`);
@@ -50,31 +54,35 @@
                 alert("You did not enter ROCK or PAPER or SCISSORS!");
                 i -= 1
             }
-            else if (i === n) {
-                if (playerScore > computerScore) {
-                    return console.log("PLAYER WINS!")
-                }
-                else if (playerScore < computerScore) {
-                    return console.log("COMPUTER WINS!")
-                }
-                else if (playerScore == computerScore) {
-                    return console.log("NO ONE WINS!")
-                }
-            }
             else {
-                let playerScore = 0;
-                let computerScore = 0;
-                let roundWon = play(computerSelection, playerSelection);
+                var roundWon = play(computerSelection, playerSelection);
                 if (roundWon === "playerwin" ) {
-                    playerScore += 1
+                    playerScore += 1 ;
+                    console.log(`PLAYER = ${playerScore} | COMPUTER = ${computerScore}`)
                 }
                 else if (roundWon === "computerwin") {
-                    computerScore += 1
+                    computerScore += 1;
+                    console.log(`PLAYER = ${playerScore} | COMPUTER = ${computerScore}`)
                 }
-                console.log(`PLAYER = ${playerScore} | COMPUTER = ${computerScore}`);
+                else if (roundWon ==="tie") {
+                    console.log("TIE!")
+                }
+                
             }
-        }    
+            }
+
+            if (playerScore > computerScore) {
+                return console.log("PLAYER WINS!")
+                }
+            else if (playerScore < computerScore) {
+                return console.log("COMPUTER WINS!")
+            }
+            else if (playerScore == computerScore) {
+                return console.log("NO ONE WINS!")
+            }
         }
+            
+        
 
 
     </script>
