@@ -1,0 +1,117 @@
+html, body{
+    background-color: rgb(79, 79, 197);
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+div.background{
+    height: 700px;
+    width: 1100px;
+    background-image: url(images/boxing.jpg);
+    background-size: 1100px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-size: 80px;
+    font-weight:600;
+    text-align: center;
+    
+    color: rgb(172, 151, 33)
+}
+
+.vs {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.scoreBox{
+    display:flex;
+    flex-direction: column;
+    margin-right: 40px;
+    border: 3px solid rgb(204, 184, 74);
+    border-radius: 20px;
+    box-sizing:border-box;
+    height: 135px;
+    width: 220px;
+    color:rgb(60, 147, 16);
+}
+
+.scores {
+    color: rgb(149, 6, 6);
+}
+
+.seperator {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.bof {
+    font-size: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.btnColumnOne {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+    height: 400px;
+    justify-content: space-evenly;
+}
+
+.btnColumnTwo {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: 140px;
+    height: 400px;
+    justify-content: space-evenly;
+}
+
+button {
+    box-sizing: border-box;
+    height: 45px;
+    width: 180px;
+    font-size: 20px ;
+    padding: 10px 5px 10px 5px ;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700px;
+    background-color: rgb(136, 22, 22);
+    border: 3px solid white;
+    color:aliceblue;
+}
+
+.btnColumnTwo button{
+    background-color: rgb(37, 35, 35);
+    border: 3px solid white;
+}
