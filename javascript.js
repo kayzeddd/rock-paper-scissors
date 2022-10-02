@@ -129,12 +129,13 @@ function buttonReset() {
     roboScissors.classList.remove("borderChange");
 }
 
-//Post game
+//Play again button
 const playAgain = document.createElement("button");
 playAgain.classList.add("playAgain");
 playAgain.textContent = "Fight Again?";
 playAgain.addEventListener("click", reset)
 
+//Post game function
 function finalScore(){
     scoreBox.style.width= "350px";
     rounds.textContent = "FINAL SCORE";
