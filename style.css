@@ -16,7 +16,6 @@ body {
    
 }
 
-
 div.background{
     height: 700px;
     width: 1100px;
@@ -136,6 +135,11 @@ div.background{
     transform: translateY(4px);
 }
 
+.borderChange {
+    transform: scale(1.1);
+    border-color: rgb(210, 210, 3); 
+}
+
 .playAgain {
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif, serif;
@@ -143,9 +147,14 @@ div.background{
     border: 4px solid black;
     border-radius: 20px;
     padding: 8px;
+    cursor: pointer;
 }
 
-.borderChange {
-    transform: scale(1.1);
-    border-color: rgb(210, 210, 3); 
+.playAgain:hover{
+    background-color: yellow;
+}
+
+.playAgain:active{
+    background-color: yellow;
+    transform: translateY(4px);
 }

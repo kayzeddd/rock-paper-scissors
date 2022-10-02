@@ -1,3 +1,4 @@
+//Element Variables
 const playerBtn = document.querySelectorAll(".playerBtn");
 const roboBtn = document.querySelectorAll("roboBtn");
 const announcer = document.querySelector(".announcer");
@@ -9,24 +10,44 @@ const scoreBox = document.querySelector(".scoreBox");
 const buttonBlock = document.querySelector(".buttonBlock");
 const playerButtons = document.querySelector(".btnColumnOne");
 const computerButtons = document.querySelector(".btnColumnTwo");
+const roboRock = document.querySelector(".roboRock");
+const roboPaper = document.querySelector(".roboPaper");
+const roboScissors = document.querySelector(".roboScissors");
 
+//audio
+const cheer = document.getElementById("cheer");
+cheer.volume = 0.1;
+cheer.loop = true;
+const bell = document.getElementById("bell")
+bell.volume = 0.1;
 
+function bellPlay() {
+bell.currentTime = 0;
+bell.play();}
+
+window.onload = function() {
+    cheer.play();
+    bell.play();
+}
+
+//Global Variables
 let playerScore = 0;
 let computerScore = 0;
 let round= 0;
 
+//Game Functions
 function playRound(e) {
-    playerBtn.forEach(btn => {btn.classList.remove("borderChange")});
-    removeClass();
+    bellPlay();
+    buttonReset();
     this.classList.add("borderChange");
     let choice = e.target.textContent;
     if (choice === "ROCK PUNCH") {
         play("ROCK")
     }
-    if (choice === "PAPER SMACK") {
+    else if (choice === "PAPER SMACK") {
         play("PAPER")
     }
-    if (choice === "SCISSOR CHOP") {
+    else if (choice === "SCISSOR CHOP") {
         play("SCISSORS")
     }
     round += 1;
@@ -85,10 +106,6 @@ function play(choice) {
     }
 }
 
-const roboRock = document.querySelector(".roboRock");
-const roboPaper = document.querySelector(".roboPaper");
-const roboScissors = document.querySelector(".roboScissors");
-
 function getComputerChoice(){
     let random = Math.floor(Math.random() * 3);
     if (random === 0) {
@@ -104,12 +121,15 @@ function getComputerChoice(){
             return "SCISSORS"
         }
     }
-function removeClass() {
+
+function buttonReset() {
+    playerBtn.forEach(btn => {btn.classList.remove("borderChange")});
     roboRock.classList.remove("borderChange");
     roboPaper.classList.remove("borderChange");
     roboScissors.classList.remove("borderChange");
 }
 
+//Post game
 const playAgain = document.createElement("button");
 playAgain.classList.add("playAgain");
 playAgain.textContent = "Fight Again?";
@@ -137,4 +157,5 @@ function reset() {
     location.reload()
 }
 
+//Event
 playerBtn.forEach(btn => {btn.addEventListener("click", playRound)});
