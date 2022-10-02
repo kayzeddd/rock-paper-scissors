@@ -25,11 +25,6 @@ function bellPlay() {
 bell.currentTime = 0;
 bell.play();}
 
-window.onload = function() {
-    cheer.play();
-    bell.play();
-}
-
 //Global Variables
 let playerScore = 0;
 let computerScore = 0;
@@ -37,6 +32,7 @@ let round= 0;
 
 //Game Functions
 function playRound(e) {
+    cheer.play();
     bellPlay();
     buttonReset();
     this.classList.add("borderChange");
