@@ -80,7 +80,7 @@ div.background{
 
 .buttons {
     display: flex;
-    flex-direction: row;
+    height: 400px;
 }
 
 .btnColumnOne {
@@ -134,4 +134,8 @@ div.background{
 .playerBtn:active {
     background-color:rgb(184, 54, 54);
     transform: translateY(4px);
+}
+
+.playAgain {
+    background-color: red;
 }

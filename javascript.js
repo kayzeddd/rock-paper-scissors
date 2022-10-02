@@ -5,11 +5,10 @@ const playerPoints = document.querySelector(".playerScore");
 const computerPoints = document.querySelector(".computerScore");
 const scoreBlock = document.querySelector(".score");
 const scoreBox = document.querySelector(".scoreBox");
-const buttonBlock = document.querySelector(".buttons");
+const buttonBlock = document.querySelector(".buttonBlock");
 const playerButtons = document.querySelector(".btnColumnOne");
 const computerButtons = document.querySelector(".btnColumnTwo");
 
-const playAgain = document.createElement("button");
     
 playerBtn.forEach(btn => {btn.addEventListener("click", playRound)});
 
@@ -98,18 +97,29 @@ function getComputerChoice(){
         }
     }
 
+const playAgain = document.createElement("button");
+playAgain.classList.add("playAgain");
+playAgain.textContent = "Play Again?";
+playAgain.addEventListener("click", reset)
+
 function finalScore(){
     scoreBox.style.width= "350px";
     rounds.textContent = "FINAL SCORE";
-    buttonBlock.removeChild(playerButtons);
-    buttonBlock.removeChild(computerButtons);
-    if (playerScore == computerScore){
+    if (playerScore === computerScore){
         announcer.textContent = "TIED MATCH!"
     }
     if (playerScore > computerScore){
         announcer.textContent = "MAN WINS THE MATCH!"
     }
-    else {
+    if (playerScore < computerScore) {
         announcer.textContent = "ROBO WINS THE MATCH!"
     }
+    buttonBlock.removeChild(playerButtons);
+    buttonBlock.removeChild(computerButtons);
+    buttonBlock.style.cssText = "justify-content: center; align-items:center";
+    buttonBlock.appendChild(playAgain);
+}
+
+function reset() {
+    location.reload()
 }
