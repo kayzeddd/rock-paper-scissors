@@ -1,4 +1,5 @@
 const playerBtn = document.querySelectorAll(".playerBtn");
+const roboBtn = document.querySelectorAll("roboBtn");
 const announcer = document.querySelector(".announcer");
 const rounds = document.querySelector(".round");
 const playerPoints = document.querySelector(".playerScore");
@@ -9,14 +10,15 @@ const buttonBlock = document.querySelector(".buttonBlock");
 const playerButtons = document.querySelector(".btnColumnOne");
 const computerButtons = document.querySelector(".btnColumnTwo");
 
-    
-playerBtn.forEach(btn => {btn.addEventListener("click", playRound)});
 
 let playerScore = 0;
 let computerScore = 0;
 let round= 0;
 
 function playRound(e) {
+    playerBtn.forEach(btn => {btn.classList.remove("borderChange")});
+    removeClass();
+    this.classList.add("borderChange");
     let choice = e.target.textContent;
     if (choice === "ROCK PUNCH") {
         play("ROCK")
@@ -33,7 +35,7 @@ function playRound(e) {
     }
     else{
     rounds.textContent = `ROUND ${round}`
-    }   
+    }  
 }
 
 function play(choice) {
@@ -83,23 +85,34 @@ function play(choice) {
     }
 }
 
+const roboRock = document.querySelector(".roboRock");
+const roboPaper = document.querySelector(".roboPaper");
+const roboScissors = document.querySelector(".roboScissors");
 
 function getComputerChoice(){
     let random = Math.floor(Math.random() * 3);
     if (random === 0) {
+        roboRock.classList.add("borderChange");
         return "ROCK";
         }
         else if (random === 1) {
+            roboPaper.classList.add("borderChange");
             return "PAPER"
         }
         else if (random ===2) {
+            roboScissors.classList.add("borderChange");
             return "SCISSORS"
         }
     }
+function removeClass() {
+    roboRock.classList.remove("borderChange");
+    roboPaper.classList.remove("borderChange");
+    roboScissors.classList.remove("borderChange");
+}
 
 const playAgain = document.createElement("button");
 playAgain.classList.add("playAgain");
-playAgain.textContent = "Play Again?";
+playAgain.textContent = "Fight Again?";
 playAgain.addEventListener("click", reset)
 
 function finalScore(){
@@ -123,3 +136,5 @@ function finalScore(){
 function reset() {
     location.reload()
 }
+
+playerBtn.forEach(btn => {btn.addEventListener("click", playRound)});
