@@ -15,10 +15,10 @@ const roboPaper = document.querySelector(".roboPaper");
 const roboScissors = document.querySelector(".roboScissors");
 
 //audio
-const cheer = document.getElementById("cheer");
+const cheer = new Audio("audio/cheer2.wav");
 cheer.volume = 0.1;
 cheer.loop = true;
-const bell = document.getElementById("bell")
+const bell = new Audio("audio/bell.wav")
 bell.volume = 0.1;
 
 function bellPlay() {
