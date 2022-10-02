@@ -49,6 +49,7 @@ div.background{
     font-size: 45px;
     margin-top: 20px;
     margin-left: 40px;
+    height : 135px;
 }
 
 .scoreBox{
@@ -59,7 +60,7 @@ div.background{
     border-radius: 20px;
     box-sizing:border-box;
     height: 135px;
-    width: 220px;
+    width: 250px;
     color:rgb(60, 147, 16);
 }
 
@@ -72,8 +73,9 @@ div.background{
     margin-right: 20px;
 }
 
-.bof {
+.announcer {
     font-size: 20px;
+    color:rgb(210, 194, 194)
 }
 
 .buttons {
@@ -98,7 +100,7 @@ div.background{
     justify-content: space-evenly;
 }
 
-button {
+.playerBtn {
     box-sizing: border-box;
     height: 45px;
     width: 180px;
@@ -109,9 +111,27 @@ button {
     background-color: rgb(136, 22, 22);
     border: 3px solid white;
     color:aliceblue;
+    cursor: pointer;
 }
 
-.btnColumnTwo button{
+.roboBtn{
+    box-sizing: border-box;
+    height: 45px;
+    width: 180px;
+    font-size: 20px ;
+    padding: 10px 5px 10px 5px ;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700px;
     background-color: rgb(37, 35, 35);
     border: 3px solid white;
+    color:aliceblue;
+}
+
+.playerBtn:hover {
+    background-color:rgb(184, 54, 54);
+}
+
+.playerBtn:active {
+    background-color:rgb(184, 54, 54);
+    transform: translateY(4px);
 }
